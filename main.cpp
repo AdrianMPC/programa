@@ -4,7 +4,7 @@
 #include <mutex>
 #include <random>
 #include <chrono>
-
+#include <cstdlib>
 
 std::mutex mutex_controlador;
 
@@ -47,9 +47,15 @@ double productoPuntoVectores(const std::vector<double>& vec1, const std::vector<
     return proDot;
 }
 
-int main(){
-    int num_threads = 4;
-    int tam = 10;
+int main(int argc, char *argv[]){
+
+    if (argc != 3) {
+        std::cerr << "USO: " << argv[0] << " <arg1> <arg2>" << std::endl;
+        return 1;
+    }
+
+    int num_threads = atoi(argv[1]);;
+    int tam = atoi(argv[argc-1]);
 
     std::vector<double> vector1(tam);
     std::vector<double> vector2(tam);
@@ -68,6 +74,6 @@ int main(){
     std::cout << "Producto punto de los 2 vectores: " << productoPuntoVectores(vector1, vector2, num_threads) << std::endl;
     auto fin = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duracion = fin - inicio;
-    std::cout << "Tiempo de ejecución: " << duracion.count() << " segundos" << std::endl;
+    std::cout << "Tiempo de ejecucion: " << duracion.count() << " segundos" << std::endl;
     return 0;
 }
