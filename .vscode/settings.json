@@ -60,6 +60,19 @@
         "variant": "cpp",
         "chrono": "cpp",
         "iomanip": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "any": "cpp",
+        "bitset": "cpp",
+        "cinttypes": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "cstring": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp",
+        "regex": "cpp",
+        "fstream": "cpp"
     }
 }
